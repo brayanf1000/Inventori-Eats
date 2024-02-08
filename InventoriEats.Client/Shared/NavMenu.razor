@@ -1,0 +1,56 @@
+﻿<div class="navbar" style="background-image: linear-gradient(to right, #FF8C00, #FF0000);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="" style="color: white; font-weight: bold; font-size: 1.2em;">Economato Inventory</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="sidebar" style="background-image: linear-gradient(to right, #FF8C00, #FF0000);">
+    <nav class="nav flex-column">
+        <div class="nav-item" style="font-weight: bold;">
+            <NavLink class="nav-link" href="productos" style="font-size: 21px;">
+                <span class="oi oi-project" aria-hidden="true"></span> Productos
+            </NavLink>
+        </div>
+        <!-- Agrega más enlaces según sea necesario -->
+    </nav>
+</div>
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+<style>
+    .navbar {
+        padding: 10px 0; /* Espaciado interior del encabezado */
+        background-color: rgb(255, 140, 0); /* Color de fondo entre naranja y rojo */
+    }
+
+    .sidebar {
+        width: 250px; /* Ancho de la barra lateral */
+        background-color: rgb(255, 140, 0); /* Color de fondo de la barra lateral */
+        padding-top: 20px; /* Espaciado superior de la barra lateral */
+        min-height: 100vh; /* Altura mínima que ocupa toda la pantalla */
+        color: #fff; /* Color del texto en la barra lateral */
+    }
+
+    .nav-item {
+        padding: 8px 20px; /* Espaciado interior de los elementos de la barra lateral */
+    }
+
+    .nav-link {
+        color: #fff; /* Color del texto del enlace en la barra lateral */
+    }
+
+</style>
+

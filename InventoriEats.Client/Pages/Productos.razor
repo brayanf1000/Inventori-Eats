@@ -1,0 +1,165 @@
+﻿@page "/productos"
+
+@using InventoriEats.Shared;
+@using CurrieTechnologies.Razor.SweetAlert2
+@using InventoriEats.Client.Services;
+
+@inject SweetAlertService swal;
+@inject IProductoService productoService;
+@inject ICategoriaService categoriaService;
+@inject IJSRuntime JSRuntime
+
+
+<div class="d-flex justify-content-between align-items-center" style="margin-top: 50px;">
+    <div class="d-flex align-items-center">
+        <img src="/IconoInventoriEats.png" alt="Inventori Eats" style="max-width: 160px; margin-right: 10px;">
+        <h3 style="display: inline-block; margin: 0; padding: 0;">Productos</h3>
+    </div>
+
+    <a class="btn btn-success btn-sm mb-3 btn-new-product" href="producto">Nuevo Producto</a>
+</div>
+
+
+@*<a id="btnGenerate" class="btn btn-success btn-sm mb-3 btn-new-product" href="http://localhost:5257/api/Report/GetReport?reportType=1" style="margin-top: 25px;">Reporte PDF</a>
+*@
+<table class="table" style="margin-top: 25px;">
+    <thead>
+        <tr>
+            <th>Nombre producto</th>
+            <th>Categoria</th>
+            <th>Stock</th>
+            <th>Fecha caducidad</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ListProduct == null)
+        {
+            <tr>
+                <td colspan="6" align="center">
+                    <img class="loading" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="Loading...">
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in ListProduct)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.NombreCategoria</td>
+                    <td>@item.Stock</td>
+                    <td>@item.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Descripcion</td>
+                    <td class="action-buttons">
+                        <a class="btn btn-primary btn-sm" href="producto/@item.IdProducto">
+                            <i class="oi oi-pencil"></i>
+                        </a>
+                        <button type="button" class="btn btn-danger btn-sm" @onclick="(() => Delete(item.IdProducto))">
+                            <i class="oi oi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+
+    List<ProductoDTO>? ListProduct = null;
+    List<CategoriaDTO> categorias = new List<CategoriaDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ListProduct = await productoService.ProductAll();
+        categorias = await categoriaService.GetCategoriasAll();
+
+        foreach (var producto in ListProduct)
+        {
+            var categoria = categorias.FirstOrDefault(c => c.IdCategoria == producto.IdCategoria);
+
+            if (categoria != null)
+            {
+                producto.NombreCategoria = categoria.NombreCategoria;
+            }
+        }
+    }
+
+    private async Task Delete(int id)
+    {
+        var resultado = await swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "Eliminar Producto",
+                Text = "Esta seguro que desea eliminar el producto?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true
+            });
+
+        if (resultado.IsConfirmed)
+        {
+            var eliminado = await productoService.DeleteProduct(id);
+
+            if (eliminado)
+            {
+                var message = await swal.FireAsync(new SweetAlertOptions
+                    {
+                        Title = "Producto Eliminado",
+                        Text = "Esta seguro que desea eliminar el producto?",
+                        Icon = SweetAlertIcon.Success,
+                    });
+
+                if (message.IsConfirmed)
+                    ListProduct = ListProduct.FindAll(e => e.IdProducto != id);
+            }
+        }
+    }
+}
+
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    img.loading {
+        width: 50px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 5px; /* Espaciado entre botones */
+    }
+
+        .action-buttons a, .action-buttons button {
+            margin-right: 5px;
+        }
+
+    h3 {
+        color: black;
+        font-weight: bold;
+    }
+
+    .btn-new-product {
+        background-color: rgb(255, 140, 0); /* Color de fondo entre naranja y rojo */
+        color: white;
+    }
+
+        .btn-new-product:hover {
+            background-color: #218838; /* Cambia el color de fondo en el hover */
+        }
+</style>

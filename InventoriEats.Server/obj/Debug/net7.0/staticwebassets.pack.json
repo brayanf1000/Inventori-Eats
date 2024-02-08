@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\Report1.rdlc",
+      "PackagePath": "staticwebassets\\Reports\\Report1.rdlc"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\dsEmployee.Designer.cs",
+      "PackagePath": "staticwebassets\\Reports\\dsEmployee.Designer.cs"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\dsEmployee.cs",
+      "PackagePath": "staticwebassets\\Reports\\dsEmployee.cs"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\dsEmployee.xsc",
+      "PackagePath": "staticwebassets\\Reports\\dsEmployee.xsc"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\dsEmployee.xsd",
+      "PackagePath": "staticwebassets\\Reports\\dsEmployee.xsd"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\wwwroot\\Reports\\dsEmployee.xss",
+      "PackagePath": "staticwebassets\\Reports\\dsEmployee.xss"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.InventoriEats.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.InventoriEats.Server.props",
+      "PackagePath": "build\\InventoriEats.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.InventoriEats.Server.props",
+      "PackagePath": "buildMultiTargeting\\InventoriEats.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.InventoriEats.Server.props",
+      "PackagePath": "buildTransitive\\InventoriEats.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

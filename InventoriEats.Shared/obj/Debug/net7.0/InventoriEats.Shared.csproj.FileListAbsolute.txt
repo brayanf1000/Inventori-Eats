@@ -1,0 +1,12 @@
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\bin\Debug\net7.0\InventoriEats.Shared.deps.json
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\bin\Debug\net7.0\InventoriEats.Shared.dll
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\bin\Debug\net7.0\InventoriEats.Shared.pdb
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.dll
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\refint\InventoriEats.Shared.dll
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\InventoriEats.Shared.pdb
+C:\Users\LENOVO\source\repos\InventoriEatsTesis\InventoriEats.Shared\obj\Debug\net7.0\ref\InventoriEats.Shared.dll

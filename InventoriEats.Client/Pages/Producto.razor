@@ -1,0 +1,147 @@
+﻿@page "/producto"
+@page "/producto/{idProducto:int}"
+
+@using CurrieTechnologies.Razor.SweetAlert2;
+@using InventoriEats.Shared;
+@using InventoriEats.Client.Services;
+
+@inject IProductoService productoService;
+@inject ICategoriaService categoriaService;
+@inject SweetAlertService swal;
+@inject NavigationManager navegacion;
+
+
+<div class="d-flex justify-content-between align-items-center" style="margin-top: 30px;">
+    <div class="d-flex align-items-center">
+        <img src="/IconoInventoriEats.png" alt="Inventori Eats" style="max-width: 160px; margin-right: 10px;">
+        <h3 style="display: inline-block; margin: 0; padding: 0;">@Titulo</h3>
+    </div>
+</div>
+
+<EditForm Model="producto" OnValidSubmit="OnValidSubmit" class="needs-validation" style="margin-top: 25px;">
+
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+
+    <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Nombre Producto</label>
+            <InputText class="form-control" @bind-Value="producto.Nombre" required></InputText>
+            <ValidationMessage For="@(() => producto.Nombre)"></ValidationMessage>
+        </div>
+
+        <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Stock</label>
+            <InputNumber class="form-control" @bind-Value="producto.Stock" required></InputNumber>
+            <ValidationMessage For="@(() => producto.Stock)"></ValidationMessage>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Categoría</label>
+            <InputSelect class="form-select" @bind-Value="producto.IdCategoria" required>
+                <option value="0">-- Seleccionar --</option>
+                @foreach (var item in categorias)
+                {
+                    <option value="@item.IdCategoria">@item.NombreCategoria</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => producto.IdCategoria)"></ValidationMessage>
+        </div>
+
+        <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Fecha de Ingreso</label>
+            <InputDate class="form-control" @bind-Value="producto.FechaCreacion" required></InputDate>
+            <ValidationMessage For="@(() => producto.FechaCreacion)"></ValidationMessage>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <InputTextArea class="form-control" @bind-Value="producto.Descripcion"></InputTextArea>
+        <ValidationMessage For="@(() => producto.Descripcion)"></ValidationMessage>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">
+            @btnText
+        </button>
+        <a class="btn btn-secondary ms-2" href="productos">Cancelar</a>
+    </div>
+</EditForm>
+
+
+
+@code {
+
+    [Parameter]
+    public int idProducto { get; set; } = 0;
+
+    string Titulo = string.Empty;
+    string btnText = string.Empty;
+    bool isEdit = false;
+    ProductoDTO producto = new ProductoDTO();
+    List<CategoriaDTO> categorias = new List<CategoriaDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (idProducto != 0)
+        {
+            //Editar
+            producto = await productoService.Buscar(idProducto);
+            btnText = "Actualizar";
+            Titulo = "Editar Producto";
+        }
+        else
+        {
+            producto.FechaCreacion = DateTime.Today;
+            btnText = "Guardar";
+            Titulo = "Nuevo Producto";
+        }
+        categorias = await categoriaService.GetCategoriasAll();
+    }
+
+    private async Task OnValidSubmit()
+    {
+        producto.NombreCategoria = "prueba";
+        if (idProducto == 0)
+        {
+            idProducto = await productoService.SaveProduct(producto);
+            isEdit = true;
+        }
+        else
+            idProducto = await productoService.EditProduct(producto);
+
+
+        if (idProducto != 0)
+        {
+            if (isEdit)
+            {
+                var message = await swal.FireAsync(new SweetAlertOptions
+                    {
+                        Title = "Producto Creado",
+                        Text = "El producto se creo correctamente",
+                        Icon = SweetAlertIcon.Success,
+                    });
+
+                if (message.IsConfirmed)
+                    navegacion.NavigateTo("/productos");
+            }
+            else
+            {
+                var message = await swal.FireAsync(new SweetAlertOptions
+                    {
+                        Title = "Producto Editado",
+                        Text = "El producto se edito correctamente",
+                        Icon = SweetAlertIcon.Success,
+                    });
+
+                if (message.IsConfirmed)
+                    navegacion.NavigateTo("/productos");
+            }
+            
+        }
+
+    }
+
+}
