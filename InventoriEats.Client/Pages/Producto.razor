@@ -90,13 +90,13 @@
             //Editar
             producto = await productoService.Buscar(idProducto);
             btnText = "Actualizar";
-            Titulo = "Editar Producto";
+            Titulo = "Editar Producto cambio de GIT";
         }
         else
         {
             producto.FechaCreacion = DateTime.Today;
             btnText = "Guardar";
-            Titulo = "Nuevo Producto";
+            Titulo = "Nuevo Producto cambio de GIT";
         }
         categorias = await categoriaService.GetCategoriasAll();
     }
