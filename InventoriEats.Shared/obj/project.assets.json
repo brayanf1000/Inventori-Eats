@@ -127,19 +127,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\braya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
+      "projectUniqueName": "C:\\Git\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
       "projectName": "InventoriEats.Shared",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\obj\\",
+      "projectPath": "C:\\Git\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
+      "packagesPath": "C:\\Users\\braya\\.nuget\\packages\\",
+      "outputPath": "C:\\Git\\InventoriEats.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\braya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -159,6 +159,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -186,7 +191,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

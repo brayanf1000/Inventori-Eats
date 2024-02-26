@@ -5354,19 +5354,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\braya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\InventoriEats.Server.csproj",
+      "projectUniqueName": "C:\\Git\\InventoriEats.Server\\InventoriEats.Server.csproj",
       "projectName": "InventoriEats.Server",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\InventoriEats.Server.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Server\\obj\\",
+      "projectPath": "C:\\Git\\InventoriEats.Server\\InventoriEats.Server.csproj",
+      "packagesPath": "C:\\Users\\braya\\.nuget\\packages\\",
+      "outputPath": "C:\\Git\\InventoriEats.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\braya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5380,8 +5380,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\InventoriEats.Shared.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\InventoriEats.Shared.csproj"
+            "C:\\Git\\InventoriEats.Shared\\InventoriEats.Shared.csproj": {
+              "projectPath": "C:\\Git\\InventoriEats.Shared\\InventoriEats.Shared.csproj"
             }
           }
         }
@@ -5390,6 +5390,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5454,7 +5459,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
