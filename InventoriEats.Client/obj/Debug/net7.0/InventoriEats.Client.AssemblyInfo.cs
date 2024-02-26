@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventoriEats.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+937f5be1b888607c620a26ff19a70f723049de4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventoriEats.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventoriEats.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

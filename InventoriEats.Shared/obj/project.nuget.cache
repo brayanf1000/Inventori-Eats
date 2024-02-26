@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EesIRmppYAZK3JTdENbQfqPRJkeY/G4VXsAKwRJcni90oONeMzn67yzqfk4IhGcWqrIG5ba9NMaoGFirJ3JMSw==",
+  "dgSpecHash": "C2f3K1OYrTZQjwi264PAiKl3yqIPc8Wn19/AiWwz2HyKqkjlBSuatiamYqYiGlJDCJma2VG9To0KqbKS2BOVQg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\source\\repos\\InventoriEatsTesis\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
+  "projectFilePath": "C:\\Git\\InventoriEats.Shared\\InventoriEats.Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\LENOVO\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+    "C:\\Users\\braya\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\braya\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
